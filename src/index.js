@@ -1,9 +1,15 @@
 // react
-import React from 'react';
-import ReactDom from 'react-dom';
+import React from "react";
+import ReactDom from "react-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 // component
-import App from './components/App';
+import App from "./App";
 // style
-import "./main.scss";
+import "./assets/scss/main.scss";
 
-ReactDom.render(<App />, document.getElementById('app'));
+ReactDom.render(
+  <Router>
+    <App />
+  </Router>,
+  document.getElementById("app")
+);

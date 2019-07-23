@@ -1,16 +1,33 @@
 import React, { Component } from "react";
+import Routes from "./Routes";
+import { Link, withRouter } from "react-router-dom";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isAuthenticated: true,
+      isAuthenticating: true
+    };
+  }
+
+  userHasAuthenticated = authenticated => {
+    this.setState({ isAuthenticated: authenticated });
+  };
+
   render() {
+    const childProps = {
+      isAuthenticated: this.state.isAuthenticated,
+      userHasAuthenticated: this.userHasAuthenticated
+    };
+
     return (
       <div>
-        <h1>React Webpack Boiler Plate!</h1>
-        <button type="button" className="btn btn-primary">
-          Test
-        </button>
+        <Routes childProps={childProps} />
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);

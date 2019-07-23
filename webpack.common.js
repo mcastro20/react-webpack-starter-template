@@ -6,9 +6,6 @@ module.exports = {
     main: "./src/index.js",
     vendor: "./src/vendor.js"
   },
-  output: {
-    publicPath: "/"
-  },
   module: {
     rules: [
       {
@@ -33,9 +30,6 @@ module.exports = {
         }
       }
     ]
-  },
-  devServer: {
-    historyApiFallback: true
   },
   resolve: {
     extensions: [".jsx", ".js"]

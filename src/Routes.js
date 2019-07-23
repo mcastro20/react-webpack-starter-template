@@ -4,12 +4,12 @@ import asyncComponent from "./components/AsyncComponent";
 import UnauthenticatedRoute from "./components/UnauthenticatedRoute";
 import AuthenticatedRoute from "./components/AuthenticatedRoute";
 
-const Dashboard = asyncComponent(() => import("./views/Dashboard/Dashboard"));
-const Login = asyncComponent(() => import("./views/Login/Login"));
+const Main = asyncComponent(() => import("./layouts/Main/Main"));
+const Login = asyncComponent(() => import("./layouts/Login/Login"));
 
 export default ({ childProps }) => (
   <Switch>
-    <AuthenticatedRoute path="/" exact component={Dashboard} props={childProps} />
+    <AuthenticatedRoute path="/" exact component={Main} props={childProps} />
 
     <UnauthenticatedRoute
       path="/login"

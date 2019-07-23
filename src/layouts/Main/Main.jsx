@@ -5,7 +5,7 @@ import Sidebar from "../../components/Sidebar/Sidebar";
 export class Dashboard extends Component {
   render() {
     return (
-      <div id="main">
+      <div className="main">
         <Sidebar />
       </div>
     );
